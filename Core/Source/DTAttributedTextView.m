@@ -153,9 +153,9 @@
 	if (range.length != NSNotFound)
 	{
 		// get the line of the first index of the anchor range
-//unused		DTCoreTextLayoutLine *line = [self.attributedTextContentView.layoutFrame lineContainingIndex:range.location];
 		
 #if TARGET_OS_IPHONE
+		DTCoreTextLayoutLine *line = [self.attributedTextContentView.layoutFrame lineContainingIndex:range.location];
 		// make sure we don't scroll too far
 		CGFloat maxScrollPos = self.contentSize.height - self.bounds.size.height + self.contentInset.bottom + self.contentInset.top;
 		CGFloat scrollPos = MIN(line.frame.origin.y, maxScrollPos);

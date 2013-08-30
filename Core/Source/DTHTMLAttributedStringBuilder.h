@@ -5,7 +5,10 @@
 //  Created by Oliver Drobnik on 21.01.12.
 //  Copyright (c) 2012 Drobnik.com. All rights reserved.
 //
+
+#if !TARGET_OS_IPHONE
 #import "DTHTMLParser.h"
+#endif
 
 @class DTHTMLElement;
 @protocol DTHTMLParserDelegate;
