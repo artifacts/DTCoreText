@@ -13,6 +13,7 @@
 			buildPhases = (
 				379B6A05177CC1E2001174E8 /* ShellScript */,
 				379B6B46177CFB67001174E8 /* CopyFiles */,
+				0511702B17D0EBBC003EABBA /* CopyFiles */,
 			);
 			dependencies = (
 				379B6A04177CC1DF001174E8 /* PBXTargetDependency */,
@@ -35,7 +36,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		05E47C8C17D0212B0051B164 /* DTCoreTextMac.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */; };
+		0511701317D0E32A003EABBA /* DTFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 379B694D177CBDBC001174E8 /* DTFoundation.framework */; };
+		0511701917D0E7D4003EABBA /* libDTCoreText_no_DTFoundation.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7F7EFCD1573603100F5A4D0 /* libDTCoreText_no_DTFoundation.a */; };
+		0511701E17D0E930003EABBA /* libDTCoreText.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = A70F11DE148632CD009202BF /* libDTCoreText.a */; };
+		0511702C17D0EBDA003EABBA /* libDTCoreText.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 379B69C4177CBE1C001174E8 /* libDTCoreText.a */; };
+		05E47C8C17D0212B0051B164 /* DTCoreText.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2262DC61638331500BFDAD7 /* DTCoreText.framework */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -929,13 +934,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0511700D17D0E31C003EABBA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/build_frameworks";
+			dstSubfolderSpec = 0;
+			files = (
+				0511701317D0E32A003EABBA /* DTFoundation.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0511701817D0E7BF003EABBA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/build_libs";
+			dstSubfolderSpec = 0;
+			files = (
+				0511701917D0E7D4003EABBA /* libDTCoreText_no_DTFoundation.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0511701C17D0E90D003EABBA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/build_libs";
+			dstSubfolderSpec = 0;
+			files = (
+				0511701E17D0E930003EABBA /* libDTCoreText.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0511702B17D0EBBC003EABBA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/build_libs";
+			dstSubfolderSpec = 0;
+			files = (
+				0511702C17D0EBDA003EABBA /* libDTCoreText.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05E47C8617D0210F0051B164 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "~/build_frameworks";
 			dstSubfolderSpec = 0;
 			files = (
-				05E47C8C17D0212B0051B164 /* DTCoreTextMac.framework in CopyFiles */,
+				05E47C8C17D0212B0051B164 /* DTCoreText.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1218,7 +1263,7 @@
 		C7A4261C16D63BD500B66CB6 /* NSView+UIVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+UIVIew.h"; sourceTree = "<group>"; };
 		C7A4261D16D63BD600B66CB6 /* NSView+UIVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+UIVIew.m"; sourceTree = "<group>"; };
 		C7A426AD16D76F1E00B66CB6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTCoreTextMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2262DC61638331500BFDAD7 /* DTCoreText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTCoreText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1328,7 +1373,7 @@
 				A788CA681486456100E1AFD9 /* UnitTest.octest */,
 				A7949A5814CC456000A8CCDE /* MacUnitTest.octest */,
 				A7F7EFCD1573603100F5A4D0 /* libDTCoreText_no_DTFoundation.a */,
-				E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */,
+				E2262DC61638331500BFDAD7 /* DTCoreText.framework */,
 				379B69C4177CBE1C001174E8 /* libDTCoreText.a */,
 			);
 			name = Products;
@@ -2011,6 +2056,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				0511700D17D0E31C003EABBA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -2069,6 +2115,7 @@
 				A70F11DA148632CD009202BF /* Sources */,
 				A70F11DB148632CD009202BF /* Frameworks */,
 				A70F11DC148632CD009202BF /* Headers */,
+				0511701C17D0E90D003EABBA /* CopyFiles */,
 			);
 			buildRules = (
 				A758FC9714DBCEFD007DF8B2 /* PBXBuildRule */,
@@ -2128,6 +2175,7 @@
 				A7F7EF771573603100F5A4D0 /* Sources */,
 				A7F7EF9F1573603100F5A4D0 /* Frameworks */,
 				A7F7EFA11573603100F5A4D0 /* Headers */,
+				0511701817D0E7BF003EABBA /* CopyFiles */,
 			);
 			buildRules = (
 				A7F7EFC91573603100F5A4D0 /* PBXBuildRule */,
@@ -2157,7 +2205,7 @@
 			);
 			name = DTCoreTextMac;
 			productName = DTCoreText;
-			productReference = E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */;
+			productReference = E2262DC61638331500BFDAD7 /* DTCoreText.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2370,7 +2418,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "deploymentTarget=$DEPLOYMENT_TARGET\n\nif [ ! -d \"$deploymentTarget\" ]; then\nmkdir \"$deploymentTarget\"\nfi\npwd\nsh ../../PurpleTools/buildUniversalLib.sh DTCoreText_lib $LIB_BASE_NAME \"$deploymentTarget\"";
+			shellScript = "deploymentTarget=$DEPLOYMENT_TARGET\n\nif [ ! -d \"$deploymentTarget\" ]; then\nmkdir \"$deploymentTarget\"\nfi\npwd     \nsh ../PurpleTools/buildUniversalLib.sh DTCoreText_lib $LIB_BASE_NAME \"$deploymentTarget\"";
 		};
 		A70F119414863198009202BF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3324,7 +3372,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = DTCoreTextMac;
+				PRODUCT_NAME = DTCoreText;
 				SDKROOT = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Core/Source\" \"$(SRCROOT)/Core/Externals\"/**";
 				WRAPPER_EXTENSION = framework;
@@ -3361,7 +3409,7 @@
 				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = DTCoreTextMac;
+				PRODUCT_NAME = DTCoreText;
 				SDKROOT = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Core/Source\" \"$(SRCROOT)/Core/Externals\"/**";
 				WRAPPER_EXTENSION = framework;
