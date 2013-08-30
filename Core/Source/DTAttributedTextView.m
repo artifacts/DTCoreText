@@ -135,7 +135,7 @@
 #if TARGET_OS_IPHONE
 	self.clipsToBounds = YES;
 #else
-	self.attributedTextContentView;
+	[self attributedTextContentView];
 #endif
 }
 
@@ -153,7 +153,7 @@
 	if (range.length != NSNotFound)
 	{
 		// get the line of the first index of the anchor range
-		DTCoreTextLayoutLine *line = [self.attributedTextContentView.layoutFrame lineContainingIndex:range.location];
+//unused		DTCoreTextLayoutLine *line = [self.attributedTextContentView.layoutFrame lineContainingIndex:range.location];
 		
 #if TARGET_OS_IPHONE
 		// make sure we don't scroll too far

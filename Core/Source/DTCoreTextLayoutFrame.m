@@ -9,6 +9,7 @@
 #import "DTCoreText.h"
 #import "DTCoreTextLayoutFrame.h"
 #import <DTFoundation/DTVersion.h>
+#import "DTCoreTextFunctions.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -34,7 +35,7 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 	
 	CGFloat _additionalPaddingAtBottom; // when last line in a text block with padding
 	
-	int _numberLinesFitInFrame;
+	NSUInteger _numberLinesFitInFrame;
 	DTCoreTextLayoutFrameTextBlockHandler _textBlockHandler;
 }
 
@@ -273,7 +274,7 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 			if(attribStr == nil)
 			{
 				NSRange range;
-				int index = oldLineRange.location;
+				NSUInteger index = oldLineRange.location;
 				if (truncationType == kCTLineTruncationEnd)
 				{
 					index += oldLineRange.length;

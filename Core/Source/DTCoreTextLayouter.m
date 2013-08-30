@@ -112,7 +112,7 @@
 		cacheKey = [NSString stringWithFormat:@"%ud-%@-%@", [_attributedString hash], NSStringFromCGRect(frame), NSStringFromRange(range)];
 #else
 		// TODO SG ??
-		cacheKey = [NSString stringWithFormat:@"%ud-%@-%@", [_attributedString hash], NSStringFromRect(frame), NSStringFromRange(range)];
+		cacheKey = [NSString stringWithFormat:@"%lud-%@-%@", (unsigned long)[_attributedString hash], NSStringFromRect(frame), NSStringFromRange(range)];
 #endif
 		DTCoreTextLayoutFrame *cachedLayoutFrame = [_layoutFrameCache objectForKey:cacheKey];
 		

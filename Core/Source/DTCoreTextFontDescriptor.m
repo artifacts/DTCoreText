@@ -645,11 +645,17 @@ static BOOL _needsChineseFontCascadeFix = NO;
 - (NSString *)cssStyleRepresentation
 {
 	NSMutableString *retString = [NSMutableString string];
+
+//	if ([_fontName hasSuffix:@"-Light"]) {
+//		[retString appendFormat:@"font-family:'%@';", _fontName];
+//	} else {
 	
-	if (_fontFamily)
-	{
-		[retString appendFormat:@"font-family:'%@';", _fontFamily];
-	}
+		if (_fontFamily)
+		{
+			[retString appendFormat:@"font-family:'%@';", _fontFamily];
+		}
+	
+//	}
 	
 	[retString appendFormat:@"font-size:%.0fpx;", _pointSize];
 	

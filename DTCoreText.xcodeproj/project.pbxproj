@@ -35,6 +35,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		05E47C8C17D0212B0051B164 /* DTCoreTextMac.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -928,6 +929,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		05E47C8617D0210F0051B164 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/build_frameworks";
+			dstSubfolderSpec = 0;
+			files = (
+				05E47C8C17D0212B0051B164 /* DTCoreTextMac.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		379B6B46177CFB67001174E8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1207,7 +1218,7 @@
 		C7A4261C16D63BD500B66CB6 /* NSView+UIVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+UIVIew.h"; sourceTree = "<group>"; };
 		C7A4261D16D63BD600B66CB6 /* NSView+UIVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+UIVIew.m"; sourceTree = "<group>"; };
 		C7A426AD16D76F1E00B66CB6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		E2262DC61638331500BFDAD7 /* DTCoreText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTCoreText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTCoreTextMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1317,7 +1328,7 @@
 				A788CA681486456100E1AFD9 /* UnitTest.octest */,
 				A7949A5814CC456000A8CCDE /* MacUnitTest.octest */,
 				A7F7EFCD1573603100F5A4D0 /* libDTCoreText_no_DTFoundation.a */,
-				E2262DC61638331500BFDAD7 /* DTCoreText.framework */,
+				E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */,
 				379B69C4177CBE1C001174E8 /* libDTCoreText.a */,
 			);
 			name = Products;
@@ -2136,6 +2147,7 @@
 				E2262DC21638331500BFDAD7 /* Frameworks */,
 				E2262DC31638331500BFDAD7 /* Headers */,
 				E2262DC41638331500BFDAD7 /* Resources */,
+				05E47C8617D0210F0051B164 /* CopyFiles */,
 			);
 			buildRules = (
 				E2262E001638341B00BFDAD7 /* PBXBuildRule */,
@@ -2145,7 +2157,7 @@
 			);
 			name = DTCoreTextMac;
 			productName = DTCoreText;
-			productReference = E2262DC61638331500BFDAD7 /* DTCoreText.framework */;
+			productReference = E2262DC61638331500BFDAD7 /* DTCoreTextMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -3250,7 +3262,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Core/Source\"";
 			};
@@ -3268,7 +3280,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Core/Source\"";
@@ -3309,10 +3321,11 @@
 				);
 				INFOPLIST_FILE = "Core/DTCoreText-Info.plist";
 				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = DTCoreText;
-				SDKROOT = macosx10.7;
+				PRODUCT_NAME = DTCoreTextMac;
+				SDKROOT = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Core/Source\" \"$(SRCROOT)/Core/Externals\"/**";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -3346,9 +3359,10 @@
 				);
 				INFOPLIST_FILE = "Core/DTCoreText-Info.plist";
 				INSTALL_PATH = "@rpath";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = DTCoreText;
-				SDKROOT = macosx10.7;
+				PRODUCT_NAME = DTCoreTextMac;
+				SDKROOT = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Core/Source\" \"$(SRCROOT)/Core/Externals\"/**";
 				WRAPPER_EXTENSION = framework;
 			};
