@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Drobnik.com. All rights reserved.
 //
 
-#if !TARGET_OS_IPHONE
-#import "DTHTMLParser.h"
-#endif
+//#if !TARGET_OS_IPHONE
+//#import <DTFoundation/DTHTMLParser.h>
+//#endif
 
 @class DTHTMLElement;
 @protocol DTHTMLParserDelegate;

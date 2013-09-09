@@ -10,6 +10,8 @@
 #import "DTCoreText.h"
 #import <DTFoundation/DTVersion.h>
 
+#define ALWAYS_RENDER_PARAGRAPHS 1
+
 @implementation DTHTMLWriter
 {
 	NSAttributedString *_attributedString;
@@ -376,7 +378,9 @@
 			if (![plainString hasSuffix:@"\n"])
 			{
 				// not a whole paragraph, so we don't put it in P
+#if !ALWAYS_RENDER_PARAGRAPHS
 				blockElement = @"span";
+#endif
 			}
 		}
 		
