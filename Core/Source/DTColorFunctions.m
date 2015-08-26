@@ -62,7 +62,9 @@ DTColor *DTColorCreateWithHexString(NSString *hexString)
 #if TARGET_OS_IPHONE
 	return [DTColor colorWithRed:red green:green blue:blue alpha:1.0];
 #else
-	return (DTColor *)[NSColor colorWithDeviceRed:red green:green blue:blue alpha:1.0];
+    NSColorSpace *genericRGBColorSpace = [NSColorSpace genericRGBColorSpace];
+    CGFloat components[4] = {red, green, blue, 1.0};
+    return (DTColor *)[NSColor colorWithColorSpace:genericRGBColorSpace components:components count:4];
 #endif
 }
 
