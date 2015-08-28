@@ -58,13 +58,13 @@ DTColor *DTColorCreateWithHexString(NSString *hexString)
 	CGFloat red = redValue/maxValue;
 	CGFloat green = greenValue/maxValue;
 	CGFloat blue = blueValue/maxValue;
+    CGFloat alpha = 1.0;
 	
 #if TARGET_OS_IPHONE
-	return [DTColor colorWithRed:red green:green blue:blue alpha:1.0];
+	return [DTColor colorWithRed:red green:green blue:blue alpha:alpha];
 #else
-    NSColorSpace *genericRGBColorSpace = [NSColorSpace genericRGBColorSpace];
-    CGFloat components[4] = {red, green, blue, 1.0};
-    return (DTColor *)[NSColor colorWithColorSpace:genericRGBColorSpace components:components count:4];
+    CGFloat components[4] = {red, green, blue, alpha};
+    return (DTColor *)[NSColor colorWithColorSpace:[NSColorSpace sRGBColorSpace] components:components count:4];
 #endif
 }
 
@@ -94,7 +94,8 @@ DTColor *DTColorCreateWithHTMLName(NSString *name)
 #if TARGET_OS_IPHONE
 		return [DTColor colorWithRed:red green:green blue:blue alpha:alpha];
 #else
-		return (DTColor *)[NSColor colorWithDeviceRed:red green:green blue:blue alpha:alpha];
+        CGFloat components[4] = {red, green, blue, alpha};
+        return (DTColor *)[NSColor colorWithColorSpace:[NSColorSpace sRGBColorSpace] components:components count:4];
 #endif
 	}
 	
@@ -117,7 +118,8 @@ DTColor *DTColorCreateWithHTMLName(NSString *name)
 #if TARGET_OS_IPHONE
 		return [DTColor colorWithRed:red green:green blue:blue alpha:alpha];
 #else
-		return (DTColor *)[NSColor colorWithDeviceRed:red green:green blue:blue alpha:alpha];
+        CGFloat components[4] = {red, green, blue, alpha};
+        return (DTColor *)[NSColor colorWithColorSpace:[NSColorSpace sRGBColorSpace] components:components count:4];
 #endif
 	}
 	
@@ -281,7 +283,7 @@ DTColor *DTColorCreateWithHTMLName(NSString *name)
 
 NSString *DTHexStringFromDTColor(DTColor *color)
 {
-	CGColorRef cgColor = color.CGColor;
+	CGColorRef cgColor = [color colorUsingColorSpace:[NSColorSpace sRGBColorSpace]].CGColor;
 	size_t count = CGColorGetNumberOfComponents(cgColor);
 	const CGFloat *components = CGColorGetComponents(cgColor);
 	
@@ -297,8 +299,8 @@ NSString *DTHexStringFromDTColor(DTColor *color)
 	// RGB
 	else if (count == 4)
 	{
-		return [NSString stringWithFormat:stringFormat, (NSUInteger)(components[0] * (CGFloat)255),
-				  (NSUInteger)(components[1] * (CGFloat)255), (NSUInteger)(components[2] * (CGFloat)255)];
+        return [NSString stringWithFormat:stringFormat, (NSUInteger)(components[0] * (CGFloat)255),
+                         (NSUInteger)(components[1] * (CGFloat)255), (NSUInteger)(components[2] * (CGFloat)255)];
 	}
 	
 	// Unsupported color space
