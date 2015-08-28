@@ -286,23 +286,25 @@ NSString *DTHexStringFromDTColor(DTColor *color)
 	CGColorRef cgColor = [color colorUsingColorSpace:[NSColorSpace sRGBColorSpace]].CGColor;
 	size_t count = CGColorGetNumberOfComponents(cgColor);
 	const CGFloat *components = CGColorGetComponents(cgColor);
-	
+
 	static NSString *stringFormat = @"%02x%02x%02x";
-	
+
 	// Grayscale
 	if (count == 2)
 	{
-		NSUInteger white = (NSUInteger)(components[0] * (CGFloat)255);
+		NSUInteger white = (NSUInteger) (components[0] * (CGFloat) 255);
 		return [NSString stringWithFormat:stringFormat, white, white, white];
 	}
-	
+
 	// RGB
 	else if (count == 4)
 	{
-        return [NSString stringWithFormat:stringFormat, (NSUInteger)(components[0] * (CGFloat)255),
-                         (NSUInteger)(components[1] * (CGFloat)255), (NSUInteger)(components[2] * (CGFloat)255)];
+		return [NSString stringWithFormat:stringFormat,
+						(NSUInteger) (components[0] * (CGFloat) 255),
+						(NSUInteger) (components[1] * (CGFloat) 255),
+						(NSUInteger) (components[2] * (CGFloat) 255)];
 	}
-	
+
 	// Unsupported color space
 	return nil;
 }
