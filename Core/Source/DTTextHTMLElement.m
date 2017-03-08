@@ -58,14 +58,14 @@
 			// useing \r as to not confuse this with line feeds, but still get a single paragraph
 			text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@"\r"];
 		}
-		else if (_containsAppleConvertedSpace)
-		{
-			// replace nbsp; with regular space
-			text = [_text stringByReplacingOccurrencesOfString:UNICODE_NON_BREAKING_SPACE withString:@" "];
-		}
-		else
-		{
-			text = [_text stringByNormalizingWhitespace];
+        else
+        {
+            if (_containsAppleConvertedSpace) {
+                // replace nbsp; with regular space
+                text = [_text stringByReplacingOccurrencesOfString:UNICODE_NON_BREAKING_SPACE withString:@" "];
+            }
+            // normalize white space
+            text = [_text stringByNormalizingWhitespace];
 		}
 		
 		NSDictionary *attributes = [self attributesForAttributedStringRepresentationWithContext:context];
